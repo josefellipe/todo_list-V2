@@ -1,9 +1,10 @@
 {% load static %}
 
+
 <li class="list-group-item">
     <div class="row">
-        <p class="justify-content-start col-8">{{task.title}}</p>
-        <p class="justify-content-end col-2"><a class="btn btn-primary" href="#" role="button"><img src="{% static 'image/icons/pencil.svg' %}" /></a></p>
-        <p class="justify-content-end col-2"><a class="btn btn-danger" href="{% url "deleteTask" task.pk %}" role="button"><img src="{% static 'image/icons/trash.svg' %}" /></a></p>
+        <p class="justify-content-start col-7 truncate-text">{{task.title}}</p>
+        <button class="justify-content-end col-2 btn btn-primary m-1" type="button" data-bs-toggle="modal" data-bs-target="#updateModal{{task.pk}}"><img src="{% static 'image/icons/pencil.svg' %}" /></button>
+        <button class="justify-content-end col-2 btn btn-danger m-1"><a href="{% url "deleteTask" task.pk %}" role="button"><img src="{% static 'image/icons/trash.svg' %}" /></a></button>
     </div>
 </li>

@@ -10,7 +10,7 @@
     <div class="row">
       <div class="col">
         <ul class="list-group">
-          <li class="list-group-item active" aria-current="true">To Do - 3</li>
+          <li class="list-group-item active" aria-current="true">To Do - {{ tasks_todo|length }}</li>
           {% for task in tasks_todo %}
             {% include 'component/task.html' %}
           {% endfor %}
@@ -18,7 +18,7 @@
       </div>
       <div class="col">
         <ul class="list-group">
-          <li class="list-group-item active" aria-current="true">In Progress - 4</li>
+          <li class="list-group-item active" aria-current="true">In Progress - {{ tasks_in_progress|length }}</li>
           {% for task in tasks_in_progress %}
             {% include 'component/task.html' %}
           {% endfor %}
@@ -26,7 +26,7 @@
       </div>
       <div class="col">
         <ul class="list-group">
-          <li class="list-group-item active" aria-current="true">Finished - 2</li>
+          <li class="list-group-item active" aria-current="true">Finished - {{ tasks_is_complete|length }}</li>
           {% for task in tasks_is_complete %}
             {% include 'component/task.html' %}
           {% endfor %}
@@ -34,4 +34,10 @@
       </div>
     </div>
   </div>
+  
+  {% for task in all_tasks %}
+    {% include "component/update_task.html" %}
+  {% endfor %}
+
+
 {% endblock %}

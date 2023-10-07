@@ -1,18 +1,17 @@
 {% load static %}
 
-<button class="btn btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#addModal"><img src="{% static './image/icons/add.svg' %}" /></button>
 
 <div>
-  <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+  <div class="modal fade" id="updateModal{{task.pk}}" tabindex="-1" aria-labelledby="updateModal{{task.pk}}Label" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="addModalLabel">New Task</h5>
+          <h5 class="modal-title" id="updateModalTitle{{task.pk}}Label">New Task</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <form action="{% url 'addTask' %}" method="post">
           {% csrf_token %}
-          <div class="modal-body">{{ form }}</div>
+          <div class="modal-body">{{ form_teste.form }}</div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             <button type="submit" class="btn btn-primary">Create</button>

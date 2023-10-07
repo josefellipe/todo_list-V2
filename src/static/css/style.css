@@ -8,3 +8,10 @@ body {
     text-align: left;
     background-color: #ffffff;
   }
+
+.truncate-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%; /* Adjust the maximum width if necessary */
+}
