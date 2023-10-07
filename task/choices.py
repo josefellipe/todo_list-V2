@@ -1,6 +1,6 @@
 STATUS_CHOICES = (
     ('todo', 'Todo'),
-    ('in_process', 'In Process'),
+    ('in_progress', 'In Progress'),
     ('is_complete', 'Complete'),
 )
 
