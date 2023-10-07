@@ -12,7 +12,7 @@
         </div>
         <form action="{% url 'addTask' %}" method="post">
           {% csrf_token %}
-          <div class="modal-body">{{ form }}</div>
+          <div class="modal-body">{{ form.0.1 }}</div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             <button type="submit" class="btn btn-primary">Create</button>
